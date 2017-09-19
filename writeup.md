@@ -15,14 +15,26 @@ The goals/steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image1]: ./writeup_imgs/1.png "Class distribution on training set"
+[image2]: ./writeup_imgs/2.png "Class distribution on validation set"
+[image3]: ./writeup_imgs/3.png "Class distribution on test set"
+[image4]: ./writeup_imgs/4.png "Sample images"
+[image5]: ./writeup_imgs/5.png "Transformed sample images"
+[image6]: ./writeup_imgs/6.png "gayscale"
+[image7]: ./writeup_imgs/7.png "Softmax new image 1"
+[image8]: ./writeup_imgs/8.png "Softmax new image 2"
+[image9]: ./writeup_imgs/9.png "Softmax new image 3"
+[image10]: ./writeup_imgs/10.png "Softmax new image 4"
+[image11]: ./writeup_imgs/11.png "Softmax new image 5"
+[image12]: ./writeup_imgs/12.png "Conv 1 output"
+[image13]: ./writeup_imgs/13.png "Conv 2 output"
+[image14]: ./new_images/70.jpg "Speed limit (70km/h)"
+[image15]: ./new_images/bicycle.jpg "Bicycles crossing"
+[image16]: ./new_images/bumpy_road.jpg "Bumpy road"
+[image17]: ./new_images/no_pass.jpg "No passing"
+[image18]: ./new_images/stop_sign.jpg "Stop"
+
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -51,7 +63,13 @@ signs dataset:
 
 Here is an exploratory visualization of the data set. I include class distribution on each of our datasets(train, validation, and test). Also, I display some of the sign.
 
-TODO.
+![alt text][image1]
+
+![alt text][image2]
+
+![alt text][image3]
+
+![alt text][image4]
 
 ### Design and Test a Model Architecture
 
@@ -61,7 +79,7 @@ TODO.
 
 I decided to generate additional data because deep learning architectures improve as more data you have, and to balance class distribution. Samples are scale ([.9,1.1] ratio), rotation ([-15,+15] degrees), translated([-2, 2] pixel on each direction). All this transformation should not affect final classification. Here are some samples of the generated data, and the new distribution of classes in the training dataset.
 
-TODO
+![alt text][image5]
 
 #### Pre-processing
 
@@ -69,7 +87,7 @@ Based on this [article](http://yann.lecun.com/exdb/publis/pdf/sermanet-ijcnn-11.
 
 Here is an example of a traffic sign image before and after grayscaling and normalization.
 
-TODO
+![alt text][image6]
 
 #### 2. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and table describing the final model.
 
@@ -112,7 +130,16 @@ My final model results were:
 
 Here are five German traffic signs that I found on the web:
 
-TODO
+![alt text][image14]
+
+![alt text][image15]
+
+![alt text][image16]
+
+![alt text][image17]
+
+![alt text][image18]
+
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
@@ -143,7 +170,7 @@ For the first image, the model is sure that this is a speed limit (20km/h) (prob
 | ~0                      | Speed limit (80km/h)                                     |
 | ~0                    | Speed limit (50km/h)                                  |
 
-TODO
+![alt text][image7]
 
 Second image
 
@@ -155,6 +182,8 @@ Second image
 | ~0                      | Road work                                     |
 | ~0                    | Children crossing                                 |
 
+![alt text][image8]
+
 Third image
 
 | Probability             |     Prediction                                | 
@@ -165,7 +194,7 @@ Third image
 | ~0                      | No passing                                     |
 | ~0                    | Slippery road                                 |
 
-TODO
+![alt text][image9]
 
 Fourth image
 
@@ -177,7 +206,7 @@ Fourth image
 | ~0                      | Roundabout mandatory                                     |
 | ~0                    | No entry                                 |
 
-TODO
+![alt text][image10]
 
 Last image
 
@@ -189,11 +218,13 @@ Last image
 | ~0                      | Speed limit (50km/h)                                     |
 | ~0                    | Yield                                 |
 
-TODO
+![alt text][image11]
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications
 
-TODO
+![alt text][image12]
+
+![alt text][image13]
 
 At the first Convolution output, it seems model learn edges from the image and them in the second layer was trying to learn symbols in the sign. However, those symbols appear to have a problem with the form of the numbers(there is no clear difference between a seven and a 2).
