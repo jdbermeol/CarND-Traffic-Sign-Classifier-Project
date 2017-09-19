@@ -227,4 +227,4 @@ Last image
 
 ![alt text][image13]
 
-At the first Convolution output, it seems model learn edges from the image and them in the second layer was trying to learn symbols in the sign. However, those symbols appear to have a problem with the form of the numbers(there is no clear difference between a seven and a 2).
+At the first Convolution output, it seems model learn edges from the image and them in the second layer was trying to learn symbols in the sign. However, those symbols appear to have a problem with the form of the numbers(there is no clear difference between a seven and a two).
